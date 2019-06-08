@@ -25,4 +25,8 @@ public class World {
     public boolean alive_at() {
         return true;
     }
+
+    public World nextGeneration() {
+        return new World();
+    }
 }

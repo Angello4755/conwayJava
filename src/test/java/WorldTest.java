@@ -32,5 +32,21 @@ public class WorldTest {
         Assert.assertFalse(world.empty());
     }
 
+    @Test
+    public void test_world_is_not_empty_after_setting_a_living_cel() {
+        Location location = new Location(1,1);
+        location = location.ramdom();
+
+        world.set_living_cell_at(location);
+
+        Assert.assertFalse(world.empty());
+    }
+
+    @Test
+    public void test_an_empty_world_stays_empty_after_a_tick() {
+        World nextWorld = world.nextGeneration();
+        Assert.assertTrue(nextWorld.empty());
+    }
+
 
 }
